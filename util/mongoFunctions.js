@@ -1,5 +1,6 @@
 const fs = require(`fs`)    
 var userlogin = require("../models/userLogin")
+var normalModules = require("../models/normalModel")
 const Q = require("q")
 
 function teste(){

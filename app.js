@@ -1,7 +1,10 @@
+
 const koa = require('koa')
 const app = new koa();
 var koaRouter = require('koa-router');
 const router = new koaRouter();
+var connection = require("./util/mongoConnection")
+connection.initialize();
 
 
 const login = require("./router/login")
