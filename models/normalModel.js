@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var normalSettings = mongoose.Schema({
-    _id     : String, 
+    field0: String, 
     field1 :String,
     field2: Number,
 })
