@@ -1,3 +1,2 @@
-const Event = require("./event")
-
-module.exports ={Event}
+import query from "./event"
+export const Event = query;

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "babel": "babel-node app.js"
+    "babel": "babel-node ./src/app.js"
   },
   "repository": {
     "type": "git",

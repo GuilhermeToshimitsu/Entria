@@ -1,25 +1,25 @@
-const graphql = require("graphql");
-const EventType = require("../type/event")
-const EventInputType = require("../type/input/event")
-const Event = require("../models/normalModel")
+import { GraphQLNonNull } from "graphql";
+import EventType from "../type/event";
+import EventInputType from "../type/input/event";
+import Event from "../models/normalModel";
 
-module.exports = {
-    type:EventType,
-    args:{
-        data:{
-            id:'data',
-            type:new graphql.GraphQLNonNull(EventInputType)
+export default createEvent({
+    type: EventType,
+    args: {
+        data: {
+            id: 'data',
+            type: new GraphQLNonNull(EventInputType)
         }
     },
-    resolve: (root,{data})=>{
-        return new Promise((resolve,reject)=>{
+    resolve: async (root, { data }) => {
+        try {
             const newEvent = new Event(data)
-            newEvent.save()
-            .then(data=>{resolve(data)})
-            .catch(errors=>{reject(errors)})
-
-        })
+            return await newEvent.save()
+        } catch (err) {
+            return null
+        }
     }
-}
+})
+
 
 

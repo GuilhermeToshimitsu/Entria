@@ -28,8 +28,6 @@ router.use('/dbteste', dbteste.routes())
 
 
 const MyGraphQL = require("./schema")
-const mount = require("koa-mount")
-const convert = require("koa-convert")
 
 router.all('/graphql',routergraph({
     schema: MyGraphQL,

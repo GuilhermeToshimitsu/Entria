@@ -1,24 +1,22 @@
-const graphql = require("graphql")
-const projectionFields = require("../util/mongoProjections")
-const EventType = require("../type/event")
-const Event = require("../models/normalModel")
+import {GraphQLID,GraphQLNonNull} from "graphql"
+import projectionFields from "../util/mongoProjections";
+import EventType from "../type/event" ;
+import normalModel from "../models/normalModel";
 
-module.exports = {
+export default query({
     type: EventType,
     args: {
         id: {
             name: 'id',
-            type: new graphql.GraphQLNonNull(graphql.GraphQLID)
+            type: new GraphQLNonNull(GraphQLID)
         }
     },
-    resolve: (root, { id }, _, argsProjection) => {
-        return new Promise((resolve, reject) => {
+    resolve: async (root, { id }, _, argsProjection) => {
+        try{
             const projection = projectionFields(argsProjection)
-            Event.findById(id)
-            .select(projection)
-            .exec()
-            .then(data => resolve(data))
-            .catch(errors => { reject(errors) })
-        })
+            return await normalModel.findById(id).select(projection)
+        }catch(error){
+            return null
+        }
     }
-}
+})
