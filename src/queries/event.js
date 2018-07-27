@@ -1,5 +1,5 @@
 const graphql = require("graphql")
-const projectionFields = require("../util/mongoProjections").default
+const projectionFields = require("../util/mongoProjections")
 const EventType = require("../type/event")
 const Event = require("../models/normalModel")
 

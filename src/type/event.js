@@ -6,11 +6,14 @@ module.exports = new graphql.GraphQLObjectType({
         id: {
             type: new graphql.GraphQLNonNull(graphql.GraphQLID)
         },
-        name:{
+        fields0:{
             type: graphql.GraphQLString
         },
-        date:{
+        fields1:{
             type:graphql.GraphQLString
+        },
+        fields2:{
+            type:graphql.GraphQLInt
         }
 
     })
