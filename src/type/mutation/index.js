@@ -1,7 +1,9 @@
-import { GraphQLObjectType } from 'graphql';
-import {inputNormalN} from '../../mutations/createEvent'
+import { GraphQLObjectType, GraphQLNonNull ,GraphQLInt} from 'graphql';
+import {insertion} from '../../mutations'
 
-export const mutation = new GraphQLObjectType({
+export const mutations = new GraphQLObjectType({
     name:"Mutation",
-    fields:inputNormalN
+    fields: {
+        NormalInsert:insertion
+    }
 })

@@ -23,6 +23,7 @@
     "express": "^4.16.3",
     "graphql": "^0.13.2",
     "graphql-relay": "^0.5.5",
+    "graphql-subscriptions": "^0.5.8",
     "jest": "^23.4.1",
     "koa": "^2.5.2",
     "koa-bodyparser": "^4.2.1",

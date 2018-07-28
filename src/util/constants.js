@@ -1,5 +1,5 @@
 const serverconstants={
-mongoLink:'mongodb://localhost:27017/mydatabase',
+mongoLink:'mongodb://localhost:27017/Entria',
 dados:'try',
 
 }

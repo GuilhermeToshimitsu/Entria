@@ -6,5 +6,6 @@ var normalSettings = mongoose.Schema({
     fields2: Number,
 })
 
-let normalModel = mongoose.model('normalModel', normalSettings);
-export default normalModel;
+export const normalModel =mongoose.model('normalModel', normalSettings);
+
+// export  normalModel;

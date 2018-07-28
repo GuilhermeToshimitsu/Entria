@@ -1,30 +1,32 @@
-import {GraphQLID,GraphQLNonNull,GraphQLSchema,GraphQLObjectType} from "graphql"
-import projectionFields from "../util/mongoProjections";
-import normalType from "../type/normalType" ;
-import normalModel from "../models/normalModel";
+import {GraphQLNonNull,GraphQLInt} from "graphql"
+import {projectionFields} from "../util/mongoProjections";
+import {normalType} from "../type/normalType" ;
+import {normalModel} from '../models/normalModel'
 
-export const simpleQueryN = ({
+export const simpleQueryN = {
     type: normalType,
     args: {
-        id: {
+        _id: {
             name: '_id',
-            type: new GraphQLNonNull(GraphQLID)
+            type: new GraphQLNonNull(GraphQLInt)
         }
     },
-
-    // resolve: async (root, { id }, _, argsProjection) => {
-    //     try{
-    //         const projection = projectionFields(argsProjection)
-    //         const dados = await normalModel.findById(id).select(projection)
-    //         return dados
-    //     }catch(error){
-    //         return null
-    //     }
-    // }
-    resolve: (root,{id},_,argsProjection) => {
-        return new Promise((resolve,reject)=>{
-            const projection = projectionFields(argsProjection)
-            normalModel.findById(id).select(projection).exec().then(data=>{resolve(data)}).catch(error=>reject(error))
-        })
+    resolve: async (root, { _id }, _, argsProjection) => {
+        try{
+            // const projection = projectionFields(argsProjection)
+            // console.log(_id)
+            return await normalModel.findById(_id).lean().exec()
+        }catch(error){
+            return null
+        }
     }
-})
+    // resolve: (root, { id }, _, argsProjection) => {
+    //     return new Promise((resolve, reject) => {
+    //         // const projection = projectionFields(argsProjection)
+    //             normalModel.findById(id).exec().then(data =>{ resolve(data)
+    //             console.log(data)
+    //             })
+    //         .catch(errors => reject(errors))
+    //     })
+    //   }
+}

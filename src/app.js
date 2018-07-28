@@ -1,8 +1,6 @@
 
 const koa = require('koa')
-// const bodyparser = require("koa-bodyparser")
 const koaRouter = require('koa-router');
-
 // var graphql = require('graphql')
 const routergraph = require('koa-graphql')
 

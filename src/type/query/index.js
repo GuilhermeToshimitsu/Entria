@@ -1,9 +1,12 @@
-import { GraphQLObjectType } from 'graphql';
-import { simpleQueryN } from '../../queries/queryEvent'
+import { GraphQLObjectType} from 'graphql';
+import {querie,queryAll} from '../../queries'
 
+// import {normalType} from '../type/normalType'
 
 export const queries = new GraphQLObjectType({
     name:"Query",
-    description: "simleQuery",
-    fields: simpleQueryN
-})
+    fields: {
+        NormalByID:querie,
+        NormalAll:queryAll
+    }
+});

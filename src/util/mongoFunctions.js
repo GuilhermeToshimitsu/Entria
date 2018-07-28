@@ -1,6 +1,6 @@
 const fs = require(`fs`)    
 var userlogin = require("../models/userLogin")
-var normalModules = require("../models/normalModel")
+var normalModules = require("../models/normalModel").normalModel
 const Q = require("q")
 
 //esse passo extra faz com que seja possivel fazer mini testes com jest no mongoDB
