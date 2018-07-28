@@ -1,7 +1,7 @@
 import { GraphQLObjectType, GraphQLNonNull, GraphQLID, GraphQLInt, GraphQLString } from "graphql";
 export const normalType = new GraphQLObjectType({
     name: "Event",
-    fields: () => ({
+    fields: {
         _id: {
             type: new GraphQLNonNull(GraphQLInt)
         },
@@ -15,5 +15,5 @@ export const normalType = new GraphQLObjectType({
             type: GraphQLInt
         }
 
-    })
+    }
 })

@@ -1,7 +1,7 @@
-import { GraphQLObjectType, GraphQLNonNull, GraphQLID, GraphQLInt, GraphQLString, GraphQLInputType } from "graphql";
-export const normalInputType = new GraphQLInputType({
+import { GraphQLNonNull, GraphQLID, GraphQLInt, GraphQLString,GraphQLInputObjectType } from "graphql";
+export const normalInputType = new GraphQLInputObjectType({
     name: "EventInput",
-    fields: () => ({
+    fields: {
         _id: {
             type: new GraphQLNonNull(GraphQLInt)
         },
@@ -15,5 +15,5 @@ export const normalInputType = new GraphQLInputType({
             type: GraphQLInt
         }
 
-    })
+    }
 })

@@ -1,9 +1,9 @@
-import { GraphQLInputObjectType } from 'graphql';
-import { simpleQuery } from '../../queries'
+import { GraphQLObjectType } from 'graphql';
+import { simpleQueryN } from '../../queries/queryEvent'
 
-export const queries = new GraphQLInputObjectType({
+
+export const queries = new GraphQLObjectType({
     name:"Query",
-    fields: () =>({
-        simpleQuery,
-    })
+    description: "simleQuery",
+    fields: simpleQueryN
 })

@@ -1,4 +1,4 @@
-import {simpleQuery} from './queryEvent'
+import {simpleQueryN} from './queryEvent'
 
 
-export const simpleQuery;
+export const simpleQuery = simpleQueryN;

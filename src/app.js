@@ -27,8 +27,7 @@ const dbteste = require("./router/dbteste")
 router.use('/dbteste', dbteste.routes())
 
 
-import Schema from './schema'
-
+import {Schema} from './schema'
 router.all('/graphql',routergraph({
     schema: Schema,
     graphiql:true,
