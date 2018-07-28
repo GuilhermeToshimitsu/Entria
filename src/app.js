@@ -1,9 +1,9 @@
 
 const koa = require('koa')
-const bodyparser = require("koa-bodyparser")
+// const bodyparser = require("koa-bodyparser")
 const koaRouter = require('koa-router');
 
-var graphql = require('graphql')
+// var graphql = require('graphql')
 const routergraph = require('koa-graphql')
 
 
@@ -27,10 +27,10 @@ const dbteste = require("./router/dbteste")
 router.use('/dbteste', dbteste.routes())
 
 
-const MyGraphQL = require("./schema")
+import Schema from './schema'
 
 router.all('/graphql',routergraph({
-    schema: MyGraphQL,
+    schema: Schema,
     graphiql:true,
     pretty:true
 }))

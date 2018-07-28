@@ -1,14 +1,10 @@
-const graphql = require("graphql");
-const queries = require('./queries')
-const mutations = require("./mutations")
+import {GraphQLSchema} from 'graphql'
+import {queries} from './type/query'
+import {mutation} from './type/mutation'
+// import {input} from './mutations'
 
-module.exports = new graphql.GraphQLSchema({
-    query: new graphql.GraphQLObjectType({
-        name:"Query",
-        fields:queries
-    }),
-    mutation: new graphql.GraphQLObjectType({
-        name: 'Mutation',
-        fields: mutations
-    })
+
+export const Schema = new GraphQLSchema({
+    query: queries,
+    mutation:mutation,
 })

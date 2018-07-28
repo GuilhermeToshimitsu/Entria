@@ -1,20 +1,24 @@
-import { GraphQLNonNull } from "graphql";
-import EventType from "../type/event";
-import EventInputType from "../type/input/event";
-import Event from "../models/normalModel";
+import { GraphQLNonNull, GraphQLSchema } from "graphql";
+import normalType from "../type/normalType";
+import {normalModel} from '../models/normalModel'
+import {normalInputType} from '../type/mutation/normalInputType'
 
-export default createEvent({
-    type: EventType,
+
+
+
+export const inputNormal = new GraphQLSchema({
+    type: normalType,
     args: {
         data: {
             id: 'data',
-            type: new GraphQLNonNull(EventInputType)
+            type: new GraphQLNonNull(normalInputType)
         }
     },
     resolve: async (root, { data }) => {
         try {
-            const newEvent = new Event(data)
+            const newEvent = new normalModel(data)
             return await newEvent.save()
+            
         } catch (err) {
             return null
         }

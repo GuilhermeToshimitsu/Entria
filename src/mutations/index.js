@@ -1,2 +1,2 @@
-import {createEvent as cE1} from "./createEvent"
-export const createEvent = cE1
+import {inputNormal} from './createEvent'
+export const inputNormal;

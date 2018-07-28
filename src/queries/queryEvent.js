@@ -1,10 +1,10 @@
-import {GraphQLID,GraphQLNonNull} from "graphql"
+import {GraphQLID,GraphQLNonNull,GraphQLSchema} from "graphql"
 import projectionFields from "../util/mongoProjections";
-import EventType from "../type/event" ;
+import normalType from "../type/normalType" ;
 import normalModel from "../models/normalModel";
 
-export default query({
-    type: EventType,
+export const simpleQuery=  new GraphQLSchema({
+    type: normalType,
     args: {
         id: {
             name: 'id',
