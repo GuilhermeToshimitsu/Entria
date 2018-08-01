@@ -1,15 +1,15 @@
 import { GraphQLNonNull, GraphQLSchema, GraphQLObjectType } from "graphql";
-import {normalType} from "../type/normalType";
-import { normalModel } from '../models/normalModel'
-import { normalInputType } from '../type/mutation/normalInputType'
+import {buildingType} from "../type/buildingType"
+import { place} from '../models/buildingModel'
+import {buildingInputType} from "../type/mutation/buildingInputType"
 import {socket} from '../socket'
 
-export const inputNormalN = {
-    type: normalType,
+export const addPlace = {
+    type: buildingType,
     args: {
         data: {
             id: 'data',
-            type: new GraphQLNonNull(normalInputType)
+            type: new GraphQLNonNull(buildingInputType)
         }
     },
 
@@ -19,7 +19,7 @@ export const inputNormalN = {
             // const data = await newEvent.save()
             // console.log(data)
             return new Promise((resolve,reject)=>{
-                const newEvent = new normalModel(data)
+                const newEvent = new place(data)
                 newEvent.save().then(res=>{
                     socket.publish('EVENT_CREATED',{eventCreated:data})
                     resolve(res)
