@@ -15,6 +15,6 @@ var placeSettings = mongoose.Schema({
 
 })
 
-export const place = mongoose.model('place', placeSettings);
+export const placeModel = mongoose.model('place', placeSettings);
 
 // export  normalModel;

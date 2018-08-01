@@ -1,8 +1,8 @@
 import { GraphQLList,GraphQLObjectType, GraphQLNonNull, GraphQLID, GraphQLInt, GraphQLString ,GraphQLFloat} from "graphql";
 import {ownerType} from "./ownerType"
-import {owner} from "../models/ownerModel"
+import {ownerModel} from "../models/ownerModel"
 export const buildingType = new GraphQLObjectType({
-    name: "Owner",
+    name: "Building",
     fields:()=> ({
         _id: {
             type: new GraphQLNonNull(GraphQLInt)

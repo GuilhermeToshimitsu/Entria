@@ -7,4 +7,4 @@ var ownerSettings = mongoose.Schema({
 
 })
 
-export const owner = mongoose.model('owner', ownerSettings);
+export const ownerModel = mongoose.model('owner', ownerSettings);
