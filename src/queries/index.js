@@ -1,5 +1,7 @@
-import {simpleQueryN} from './queryEvent'
-import { simpleQueryAll } from './queryAll';
+import {buildingAll,buildingQuery,} from './buildingQuery';
+import {ownerAll,ownerQuery} from './ownerQuery'
 
-export const queryAll = simpleQueryAll;
-export const querie = simpleQueryN;
+export const  OwnerAll = ownerAll;
+export const  OwnerQuery= ownerQuery;
+export const BuildingAll = buildingAll;
+export const BuildingQuery = buildingQuery;

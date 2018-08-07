@@ -1,7 +1,7 @@
 import {socket} from '../socket';
-import {normalType} from '../type/normalType'
+import {ownerType} from '../type/ownerType'
 
 export const normalSub = {
-    type:normalType,
+    type:ownerType,
     subscribe:()=>socket.asyncIterator("EVENT_CREATED")
 }

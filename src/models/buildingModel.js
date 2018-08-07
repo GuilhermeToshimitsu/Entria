@@ -8,9 +8,9 @@ var placeSettings = mongoose.Schema({
     state: String,//estado
     apt:Number,
     lat:String,
-    lon:String,
+    lng:String,
     price: Number,
-    owner: Number,
+    ownerid: Number,
     
 
 })

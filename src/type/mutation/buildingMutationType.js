@@ -1,15 +1,9 @@
 import {GraphQLInputObjectType, GraphQLList,GraphQLObjectType, GraphQLNonNull, GraphQLID, GraphQLInt, GraphQLString ,GraphQLFloat} from "graphql";
-export const buildingInputType = new GraphQLInputObjectType({
-    name: "BuildingInput",
-    fields: ()=>({
-        _id: {
-            type: new GraphQLNonNull(GraphQLInt)
-        },
-        zip: {
-            type: new GraphQLNonNull(GraphQLInt)
-        },
+export const buildingMutationType = new GraphQLInputObjectType({
+    name: "BuildingMutation",
+    fields: {
        number: {
-        type: new GraphQLNonNull(GraphQLInt)
+        type: GraphQLInt
         },
         city: {
             type: GraphQLString
@@ -35,5 +29,5 @@ export const buildingInputType = new GraphQLInputObjectType({
         ownerid:{
             type:GraphQLInt
         }
-    })
+    }
 })

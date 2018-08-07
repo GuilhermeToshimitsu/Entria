@@ -34,10 +34,11 @@ export const buildingType = new GraphQLObjectType({
         price:{
             type:GraphQLFloat
         },
-        owner:{
-            type: owner,
-            resolve(parent,args){
 
+        owner:{
+            type: ownerType,
+            resolve(parent,args){
+                return ownerModel.findById(parent.ownerid);
             }
         }
     })
